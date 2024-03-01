@@ -13,3 +13,5 @@ def solution(brown, yellow):
             else:
                 continue
     return answer
+
+#Lv_2 에서 Lv2로 수정
