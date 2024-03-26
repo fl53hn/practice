@@ -1,6 +1,4 @@
 # 가위바위보
-# https://www.youtube.com/watch?v=m14CzR7iwts
-# 미니 프로젝트 만들기
 import random
 
 print("어떤 프로젝트를 선택하시나요?")
@@ -57,7 +55,16 @@ if A_answer == "1":
 
 elif A_answer == "2":
     print("구구단 출력기")
-    NNCalculatior = input("원하는 단을 알려주세요")
+    def NNCalculatior():
+        wantdan = input("원하는 단을 알려주세요")
+        for i in range(1, 10):
+            print(wantdan, " * ", i, "=", int(wantdan) * i)
+        RE_ans = input("한번 더 하실 거면 1을 입력해주세요")
+        if RE_ans == "1":
+            NNCalculatior()
+        else:
+            return 0
+    NNCalculatior()
 
 
 elif A_answer == "3":
