@@ -1,3 +1,7 @@
+## dic1과 dic2 로 나눔
+## dic1은 장르와 고유번호, 플레이 횟수 저장, dic2는 총 플레이 횟수 저장
+## sort 후 answer return
+## https://velog.io/@sem/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-LEVEL3-%EB%B2%A0%EC%8A%A4%ED%8A%B8%EC%95%A8%EB%B2%94-Python
 def solution(genres, plays):
     answer = []
     dic1 = {}
