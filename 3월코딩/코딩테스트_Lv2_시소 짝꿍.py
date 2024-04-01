@@ -1,16 +1,60 @@
-from collections import Counter
-
+# 다른 사람 풀이를 보고 깨우쳐 만든 풀이
 def solution(weights):
-    answer, counter = 0, Counter(weights)
-    print(counter)
-    for i in counter:
-        if counter[i] > 0:
-            answer += counter[i] * (counter[i] - 1) // 2 # nC2 n!/2!(n - 2)!
-            answer += counter[i] * counter[i * 3 / 2]
-            answer += counter[i] * counter[i * 2]
-            answer += counter[i] * counter[i * 4 / 3]
+    answer = 0
+    dic2= {}
+    for weight in weights:
+        if weight not in dic2:
+            dic2[weight] = 1
+        else:
+            dic2[weight] += 1
+    
+    for i in dic2:
+        if dic2[i] > 1:
+            answer += dic2[i] * (dic2[i] - 1) // 2 
+        if i*(3/2) in dic2:
+            answer += dic2[i] * dic2[i*(3/2)]
+        if i*2 in dic2:
+            answer += dic2[i] * dic2[i*2]
+        if i*(4/3) in dic2:
+            answer += dic2[i] * dic2[i*(4/3)]
+    
+    return answer
+
+
+##다른사람 풀이
+def solution(weights):
+    dic={}
+    friend_list=[2,3/2,4/3]
+    answer = 0
+    for weight in weights:
+        if weight in dic:
+            dic[weight]+=1
+        else:
+            dic[weight]=1
+
+    for weight in dic:
+        if dic[weight]>1:
+            answer+=dic[weight]*(dic[weight]-1)/2
+        for friend in friend_list:
+            if weight*friend in dic:
+                answer+=dic[weight] * dic[weight*friend]
 
     return answer
+
+######counter사용 풀이#################
+# from collections import Counter
+
+# def solution(weights):
+#     answer, counter = 0, Counter(weights)
+#     print(counter)
+#     for i in counter:
+#         if counter[i] > 0:
+#             answer += counter[i] * (counter[i] - 1) // 2 # nC2 n!/2!(n - 2)!
+#             answer += counter[i] * counter[i * 3 / 2]
+#             answer += counter[i] * counter[i * 2]
+#             answer += counter[i] * counter[i * 4 / 3]
+
+#     return answer
 
 # def solution(weights):
 #     answer = 0
