@@ -2,6 +2,7 @@ import math
 # 1. 그리디?
 # N: 200,000,000
 # 1 ~ (2*w)+1 설치, 6~10 사이 있음, 
+## stations안에 1 이나 n일 경우가 동작하지 않음, 수정예정
 def solution(n, stations, w):
     i,j = 1, 0
     answer = 0
