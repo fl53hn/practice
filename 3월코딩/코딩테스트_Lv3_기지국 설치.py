@@ -1,3 +1,5 @@
+#캬 미쵸따미쵸따~
+# len(stations)+1 해서 배열생성, 각 배열에 전선 연결되지 않은 가구 수(없으면 0)
 import math
 def solution(n, stations, w):
     answer = 0
