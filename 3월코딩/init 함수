@@ -1,0 +1,17 @@
+class A:
+  a = 0
+  def __init__(self):
+    self.a +=2
+  def fn(self):
+    self.a +=3
+
+class B:
+  def __init__(self):
+    self.a +=5
+  def fn(self):
+    self.a += 7
+
+
+a = B()
+a.fn()
+print(a.a)
